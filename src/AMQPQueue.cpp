@@ -33,8 +33,11 @@ AMQPQueue::AMQPQueue(amqp_connection_state_t * cnn, int channelNum, string name)
 
 AMQPQueue::~AMQPQueue() {
 	this->closeChannel();
-	if (pmessage)
+	//i think this pointer get from auto_ptr so needn't delete
+	/*
+	if (pmessage) {
 		delete pmessage;
+	}*/
 }
 
 // Declare command /* 50, 10; 3276810 */
